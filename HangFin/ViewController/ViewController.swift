@@ -18,22 +18,27 @@ class ViewController: UIViewController {
         Hangout(date: "22/03/2915", spent: "1250,70"),
         Hangout(date: "22/03/2916", spent: "1250,70")
     ]
-    
-
+    private var collectionsView: [UICollectionView] = []
     let coordinate = CLLocationCoordinate2D(latitude: 40.728, longitude: -74)
     
     @IBOutlet weak var lastHangoutCollection: UICollectionView!
     @IBOutlet weak var recommendationHangoutCollection: UICollectionView!
     @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var addView: UIView!
     
-
     @IBAction func addHangout(_ sender: UIButton) {
-        print("opaaaaaaaaaaaa")
+        self.addView.isHidden = false
+        let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(downGestureFired(_:)))
+        gestureRecognizer.direction = .down
+        gestureRecognizer.numberOfTouchesRequired = 1
+        self.addView.addGestureRecognizer(gestureRecognizer)
+        self.addView.isUserInteractionEnabled = true
     }
     
+    @objc func downGestureFired(_ gesture: UISwipeGestureRecognizer){
+        self.addView.isHidden = true
+    }
     
-    private var collectionsView: [UICollectionView] = []
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionsView = [
