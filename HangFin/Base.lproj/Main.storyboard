@@ -22,7 +22,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Zp-yC-zHN">
-                                <rect key="frame" x="0.0" y="44" width="390" height="702"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rzD-wn-Vp3">
@@ -69,7 +69,7 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oU2-Ra-fuf">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="HangoutViewCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oU2-Ra-fuf">
                                                         <rect key="frame" x="12" y="38" width="378" height="190"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="88N-L3-ido">
@@ -155,7 +155,7 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nIq-TB-4ET">
+                                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="RecommendationsViewCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nIq-TB-4ET">
                                                         <rect key="frame" x="8" y="33" width="390" height="190"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="16" minimumInteritemSpacing="0.0" id="R0c-1f-rES">
@@ -272,23 +272,8 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="awP-Jv-oz8"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="V92-oD-qbr"/>
                             </scrollView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Adicionarfooter" translatesAutoresizingMaskIntoConstraints="NO" id="l95-dG-Z0o">
-                                <rect key="frame" x="0.0" y="754" width="390" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-Z6-o8N">
-                                <rect key="frame" x="145" y="753" width="100" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="">
-                                    <backgroundConfiguration key="background" image="􀁌button" imageContentMode="scaleAspectFit"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="addHangout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KL5-cM-vth"/>
-                                </connections>
-                            </button>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qWU-91-1Lh">
-                                <rect key="frame" x="11" y="194" width="367" height="590"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qWU-91-1Lh">
+                                <rect key="frame" x="11" y="144" width="367" height="590"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addBackground" translatesAutoresizingMaskIntoConstraints="NO" id="G2T-85-dDu">
@@ -369,15 +354,40 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFp-5e-7pe" userLabel="Nav">
+                                <rect key="frame" x="0.0" y="44" width="390" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eEC-Z6-o8N">
+                                        <rect key="frame" x="319" y="3" width="63" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <backgroundConfiguration key="background" image="􀁌button" imageContentMode="scaleAspectFit"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="addHangout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KL5-cM-vth"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="qWU-91-1Lh"/>
+                                <exclude reference="xFp-5e-7pe"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="addView" destination="qWU-91-1Lh" id="4Lu-Ep-skc"/>
-                        <outlet property="lastHangoutCollection" destination="oU2-Ra-fuf" id="30I-0d-JUe"/>
-                        <outlet property="map" destination="Vpr-DL-Mp3" id="ghE-eZ-qY0"/>
-                        <outlet property="recommendationHangoutCollection" destination="nIq-TB-4ET" id="lVm-pN-rY5"/>
+                        <outlet property="footer" destination="xFp-5e-7pe" id="Tv8-zD-wrf"/>
+                        <outlet property="hangoutRecommendation" destination="nIq-TB-4ET" id="WXv-xL-IQV"/>
+                        <outlet property="lastHangouts" destination="oU2-Ra-fuf" id="nLI-Sy-yp1"/>
+                        <outlet property="map" destination="Vpr-DL-Mp3" id="fF6-Vf-rXU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -386,7 +396,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Adicionarfooter" width="390" height="88"/>
         <image name="GreenCard" width="284" height="182"/>
         <image name="HangoutCard" width="284" height="176"/>
         <image name="Homebackground" width="390" height="844"/>

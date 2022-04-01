@@ -7,109 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0BC4A668-E888-4DE2-9B9F-CF2A8EEC127D"
-            shouldBeEnabled = "No"
+            uuid = "DC00E35B-61D0-40BB-AA98-F0E77D025DF4"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HangFin/ViewController/ViewController.swift"
+            filePath = "HangFin/Views/FooterUIView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "ViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "0BC4A668-E888-4DE2-9B9F-CF2A8EEC127D - 98072f866ade0dd0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HangFin.ViewController.map.getter : Swift.Optional&lt;__C.MKMapView&gt;"
-                  moduleName = "HangFin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexdamascena/Desktop/HangFin/HangFin/ViewController/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "88">
-               </Location>
-               <Location
-                  uuid = "0BC4A668-E888-4DE2-9B9F-CF2A8EEC127D - c62bbae8908179b4"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HangFin.ViewController.map.setter : Swift.Optional&lt;__C.MKMapView&gt;"
-                  moduleName = "HangFin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexdamascena/Desktop/HangFin/HangFin/ViewController/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "108">
-               </Location>
-               <Location
-                  uuid = "0BC4A668-E888-4DE2-9B9F-CF2A8EEC127D - 6242f753aeb82a98"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HangFin.ViewController.map.modify : Swift.Optional&lt;__C.MKMapView&gt;"
-                  moduleName = "HangFin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexdamascena/Desktop/HangFin/HangFin/ViewController/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "0BC4A668-E888-4DE2-9B9F-CF2A8EEC127D - c575518e2643a2ae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HangFin.ViewController.map.modify : Swift.Optional&lt;__C.MKMapView&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "HangFin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexdamascena/Desktop/HangFin/HangFin/ViewController/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "0BC4A668-E888-4DE2-9B9F-CF2A8EEC127D - 5deedea5f4e30ea5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HangFin.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; HangFin.ViewController"
-                  moduleName = "HangFin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexdamascena/Desktop/HangFin/HangFin/ViewController/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "728">
-               </Location>
-               <Location
-                  uuid = "0BC4A668-E888-4DE2-9B9F-CF2A8EEC127D - f1a2793c0ac5021f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "HangFin.ViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;HangFin.ViewController&gt;"
-                  moduleName = "HangFin"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/alexdamascena/Desktop/HangFin/HangFin/ViewController/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "700">
-               </Location>
-            </Locations>
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
