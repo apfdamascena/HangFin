@@ -12,87 +12,97 @@ import CoreLocation
  
 class ViewController: UIViewController {
     
-    @IBOutlet weak var footer: UIView!
+    @IBOutlet weak var navbar: UIView!
     @IBOutlet weak var addView: UIView!
     
-    @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var lastHangouts: UICollectionView!
     @IBOutlet weak var hangoutRecommendation: UICollectionView!
-        
-    var collectionsView: [UICollectionView] = []
-    let coordinates : [CLLocationCoordinate2D] = [
-        CLLocationCoordinate2D(latitude: 40.728, longitude: -74),
-        CLLocationCoordinate2D(latitude: 41.728, longitude: -72)]
     
+    @IBOutlet weak var map: MKMapView!
+    
+    @IBOutlet weak var fromAdress: UITextField!
+    @IBOutlet weak var toDestiny: UITextField!
+    @IBOutlet weak var foodSpent: UITextField!
+    @IBOutlet weak var gasSpent: UITextField!
+    
+    var collectionsView: [UICollectionView] = []
+
     var addViewManager: AddViewManager = AddViewManager(observe: UIView())
     var mapViewManager: MapViewManager = MapViewManager(observe: MKMapView())
-    
     let hangoutCollectionViewManager: HangoutCollectionViewManager = HangoutCollectionViewManager()
     let cellDrawer: CellDrawer = CellDrawer()
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        FooterDrawer().draw(view: footer)
+        NavbarDrawer().draw(view: navbar)
         self.addViewManager = AddViewManager(observe: addView)
+        self.mapViewManager = MapViewManager(observe: map)
+        
         self.hangoutCollectionViewManager.add(view: lastHangouts)
         self.hangoutCollectionViewManager.add(view: hangoutRecommendation)
-        self.hangoutCollectionViewManager.setup(context: self)
-//        self.mapViewManager.setup(context: self)
         
+        self.hangoutCollectionViewManager.setup(context: self)
+        self.mapViewManager.setup(context: self)
+        
+        self.mapViewManager.createAnnotations()
+        self.addViewManager.addReferenceToViewManager(references: [
+            fromAdress, toDestiny, foodSpent, gasSpent])
+
+    }
+        
+    @IBAction func handleTapAddHangoutButton(_ sender: UIButton) {
+        
+        let hangout: Hangout? = self.addViewManager.createHangout()
+        guard let newHangout = hangout else { return }
+        self.hangoutCollectionViewManager.hangoutsDataSource.append(newHangout)
+        self.addViewManager.closeAddView()
+        self.hangoutCollectionViewManager.reloadCollectionDataSource()
     }
     
-    @IBAction func addHangout(_ sender: UIButton) {
+    @IBAction func openAddViewAfterButtonTapped(_ sender: UIButton) {
         self.addViewManager.changeViewAfterAction()
     }
-                    
-//    func setupMap(){
-//        map.delegate = self
-//        map.setRegion(MKCoordinateRegion(center: coordinates[0], span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)), animated: false)
-//
-//        coordinates.forEach { coordinate in
-//            let pin = MKPointAnnotation()
-//            pin.coordinate = coordinate
-//            pin.title = "Por onde você esteve"
-//            map.addAnnotation(pin)
-//        }
-//    }
 }
 
 
-//extension ViewController: MKMapViewDelegate {
-//
-//    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-//        guard !(annotation is MKUserLocation) else { return nil }
-//        var annotationView = map.dequeueReusableAnnotationView(withIdentifier: "CustomMap")
-//
-//        if annotationView == nil {
-//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: "CustomMap")
-//        } else {
-//            annotationView?.annotation = annotation
-//            annotationView?.canShowCallout = true
-//        }
-//
-//        annotationView?.image = UIImage(named: "GreenCard")
-//        return annotationView
-//    }
-//
-//}
 
+extension ViewController: MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else { return nil }
+        var annotationView = map.dequeueReusableAnnotationView(withIdentifier: MapConstants.IDENTIFIER)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation,
+                                              reuseIdentifier: MapConstants.IDENTIFIER)
+        } else {
+            annotationView?.annotation = annotation
+            annotationView?.canShowCallout = true
+        }
+
+        annotationView?.image = UIImage(named: MapConstants.PIN_IMAGE)
+        return annotationView
+    }
+
+}
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return hangoutCollectionViewManager.hangoutsDataSource.count
+        return collectionView == lastHangouts ?
+                hangoutCollectionViewManager.hangoutsDataSource.count :
+                hangoutCollectionViewManager.recommendationDataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let identifier = collectionView == lastHangouts ? HangoutCell.identifier : RecommendationCell.identifier
+        let dataSource = collectionView == lastHangouts ?
+            hangoutCollectionViewManager.hangoutsDataSource: hangoutCollectionViewManager.recommendationDataSource
         
-        let cell: ICell? = hangoutCollectionViewManager.construct(with: collectionView, atIndex: indexPath);
-        guard let cellToConstruct = cell else { return  UICollectionViewCell() }
-        let newCell = cellDrawer.draw(cellToConstruct, with: hangoutCollectionViewManager.hangoutsDataSource
-                                        , atIndex: indexPath)
-        return newCell
+        let cell: ICell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ICell
+        let hangout = dataSource[indexPath.row]
+        cell.draw(hangout)
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

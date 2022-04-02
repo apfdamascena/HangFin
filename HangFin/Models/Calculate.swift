@@ -14,7 +14,7 @@ class Calculate {
         var sum: Double = 0.0
         
         hangouts.forEach{ hangout in
-            let spent: Double = Double(hangout.spent) ?? 0.0
+            let spent: Double = hangout.spent
             sum += spent;
         }
         
