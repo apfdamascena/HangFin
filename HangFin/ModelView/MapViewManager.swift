@@ -24,6 +24,7 @@ class MapViewManager {
         map.delegate = context
         let coordinateZoom = MKCoordinateSpan(latitudeDelta: MapConstants.ZOOM, longitudeDelta: MapConstants.ZOOM)
         map.setRegion(MKCoordinateRegion(center: coordinates[0],
+                                         
                                          span: coordinateZoom),
                                          animated: false)
     }
@@ -37,6 +38,20 @@ class MapViewManager {
         coordinates.forEach { coordinate in
             createPin(coordinate)
         }
+    }
+    
+    func addHangoutToMap(hangout: Hangout){
+        
+        let adress: String = hangout.fromAdress
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(adress) { (placemarks, error) in
+            
+            guard let placemarks = placemarks, let location = placemarks.first?.location else { return }
+            let location2D: CLLocationCoordinate2D  = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            self.createPin(location2D)
+            self.map.reloadInputViews()
+        }
+        
     }
     
     func createPin(_ coordinate: CLLocationCoordinate2D){

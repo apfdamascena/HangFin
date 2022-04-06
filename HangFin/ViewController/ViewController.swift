@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         self.mapViewManager.createAnnotations()
         self.addViewManager.addReferenceToViewManager(references: [
             fromAdress, toDestiny, foodSpent, gasSpent])
-
+        
     }
         
     @IBAction func handleTapAddHangoutButton(_ sender: UIButton) {
@@ -57,6 +57,7 @@ class ViewController: UIViewController {
         self.hangoutCollectionViewManager.hangoutsDataSource.append(newHangout)
         self.addViewManager.closeAddView()
         self.hangoutCollectionViewManager.reloadCollectionDataSource()
+        self.mapViewManager.addHangoutToMap(hangout: newHangout)
     }
     
     @IBAction func openAddViewAfterButtonTapped(_ sender: UIButton) {
