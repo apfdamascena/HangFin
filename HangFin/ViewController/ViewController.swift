@@ -47,17 +47,30 @@ class ViewController: UIViewController {
         self.mapViewManager.createAnnotations()
         self.addViewManager.addReferenceToViewManager(references: [
             fromAdress, toDestiny, foodSpent, gasSpent])
-        
     }
         
-    @IBAction func handleTapAddHangoutButton(_ sender: UIButton) {
+    @IBAction func handleTapAddHangoutButton(_ sender: UIButton) async {
         
         let hangout: Hangout? = self.addViewManager.createHangout()
         guard let newHangout = hangout else { return }
+    
         self.hangoutCollectionViewManager.hangoutsDataSource.append(newHangout)
         self.addViewManager.closeAddView()
         self.hangoutCollectionViewManager.reloadCollectionDataSource()
+    
+
+//        Task {
+//            await self.mapViewManager.map.calculateDistance(between: newHangout.fromAdress, and: newHangout.fromDestiny, distanceCompletionHandler: { (distance, error) in
+//                
+//                guard let distance = distance else { return }
+//                newHangout.km = distance
+//            })
+//        }
+        
+        print(newHangout.km)
+        
         self.mapViewManager.addHangoutToMap(hangout: newHangout)
+        
     }
     
     @IBAction func openAddViewAfterButtonTapped(_ sender: UIButton) {

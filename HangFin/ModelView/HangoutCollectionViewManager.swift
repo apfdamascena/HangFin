@@ -43,7 +43,6 @@ class HangoutCollectionViewManager {
 
     func possibleRecommendation(){
         let hangoutAvarage: Double = Calculate.avarage(of: hangoutsDataSource) * 0.5
-        print(hangoutAvarage)
         var newRecommendation: [Hangout] = []
         hangoutsDataSource.forEach{ hangout in
             let spent: Double = hangout.spent

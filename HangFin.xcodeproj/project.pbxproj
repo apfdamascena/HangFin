@@ -14,6 +14,9 @@
 		0D1E3ECF27EE3B0C00641570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D1E3ECE27EE3B0C00641570 /* Assets.xcassets */; };
 		0D1E3ED227EE3B0C00641570 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1E3ED027EE3B0C00641570 /* LaunchScreen.storyboard */; };
 		0D1E3EDE27EEB7C500641570 /* HangoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E3EDD27EEB7C500641570 /* HangoutCell.swift */; };
+		0D26200927FF29C40071371B /* RouteDistanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26200827FF29C40071371B /* RouteDistanceError.swift */; };
+		0D26200B27FF30D70071371B /* CalculateDistanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26200A27FF30D70071371B /* CalculateDistanceError.swift */; };
+		0D26200D27FF32700071371B /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26200C27FF32700071371B /* Map.swift */; };
 		0D92BBBB27EF792900970090 /* ICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBBA27EF792800970090 /* ICell.swift */; };
 		0D92BBBE27EF7BC200970090 /* Hangout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBBD27EF7BC200970090 /* Hangout.swift */; };
 		0D92BBC327EF8BC900970090 /* RecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBC227EF8BC900970090 /* RecommendationCell.swift */; };
@@ -38,6 +41,9 @@
 		0D1E3ED127EE3B0C00641570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D1E3ED327EE3B0C00641570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D1E3EDD27EEB7C500641570 /* HangoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangoutCell.swift; sourceTree = "<group>"; };
+		0D26200827FF29C40071371B /* RouteDistanceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDistanceError.swift; sourceTree = "<group>"; };
+		0D26200A27FF30D70071371B /* CalculateDistanceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateDistanceError.swift; sourceTree = "<group>"; };
+		0D26200C27FF32700071371B /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
 		0D92BBBA27EF792800970090 /* ICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICell.swift; sourceTree = "<group>"; };
 		0D92BBBD27EF7BC200970090 /* Hangout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangout.swift; sourceTree = "<group>"; };
 		0D92BBC227EF8BC900970090 /* RecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCell.swift; sourceTree = "<group>"; };
@@ -82,6 +88,7 @@
 		0D1E3EC427EE3B0B00641570 /* HangFin */ = {
 			isa = PBXGroup;
 			children = (
+				0D26200727FF299C0071371B /* Errors */,
 				0DA952B127F75EC5008132AC /* ModelView */,
 				0DA952AE27F6BBA7008132AC /* Constants */,
 				0D92BBBC27EF7B9A00970090 /* Views */,
@@ -103,6 +110,7 @@
 			children = (
 				0DA952A627F611B1008132AC /* Calculate.swift */,
 				0D92BBBD27EF7BC200970090 /* Hangout.swift */,
+				0D26200C27FF32700071371B /* Map.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -113,6 +121,15 @@
 				0D1E3EC927EE3B0B00641570 /* ViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0D26200727FF299C0071371B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				0D26200827FF29C40071371B /* RouteDistanceError.swift */,
+				0D26200A27FF30D70071371B /* CalculateDistanceError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 		0D92BBB927EF78E600970090 /* Interfaces */ = {
@@ -226,12 +243,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D92BBC327EF8BC900970090 /* RecommendationCell.swift in Sources */,
+				0D26200927FF29C40071371B /* RouteDistanceError.swift in Sources */,
 				0D92BBF127F3B10D00970090 /* ViewDesignable.swift in Sources */,
 				0D92BBBB27EF792900970090 /* ICell.swift in Sources */,
 				0D1E3ECA27EE3B0B00641570 /* ViewController.swift in Sources */,
 				0DA952B327F76659008132AC /* AddViewManagerConstants.swift in Sources */,
 				0D92BBCF27F3792000970090 /* NavbarDrawer.swift in Sources */,
 				0DA952A927F63BFC008132AC /* MapViewManager.swift in Sources */,
+				0D26200B27FF30D70071371B /* CalculateDistanceError.swift in Sources */,
+				0D26200D27FF32700071371B /* Map.swift in Sources */,
 				0DA27C8127F558FC000FE4A0 /* HangoutCollectionViewManager.swift in Sources */,
 				0D1E3EC627EE3B0B00641570 /* AppDelegate.swift in Sources */,
 				0DA952B027F6BBBE008132AC /* MapConstants.swift in Sources */,

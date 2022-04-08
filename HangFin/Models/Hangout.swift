@@ -20,6 +20,8 @@ class Hangout {
     
     public var isDetailsOpen: Bool = false
     
+    public var km: Double = 0.0
+    
     init(date: String,
          fromAdress: String,
          fromDestiny: String,

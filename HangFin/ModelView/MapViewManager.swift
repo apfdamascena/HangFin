@@ -7,23 +7,25 @@
 
 import Foundation
 import MapKit
+import CoreLocation
 
 class MapViewManager {
     
-    let map: MKMapView
+    let mapView: MKMapView
+    let map: Map = Map()
     
     var coordinates : [CLLocationCoordinate2D] = [
-        CLLocationCoordinate2D(latitude: -8.0499390, longitude: -34.9327235),
-        CLLocationCoordinate2D(latitude: -8.0491845, longitude: -34.9313920)]
+        CLLocationCoordinate2D(latitude: -8.0491845, longitude: -34.9313920)
+    ]
     
     init(observe map: MKMapView){
-        self.map = map
+        self.mapView = map
     }
     
     func setup(context: ViewController){
-        map.delegate = context
+        mapView.delegate = context
         let coordinateZoom = MKCoordinateSpan(latitudeDelta: MapConstants.ZOOM, longitudeDelta: MapConstants.ZOOM)
-        map.setRegion(MKCoordinateRegion(center: coordinates[0],
+        mapView.setRegion(MKCoordinateRegion(center: coordinates[0],
                                          
                                          span: coordinateZoom),
                                          animated: false)
@@ -49,15 +51,14 @@ class MapViewManager {
             guard let placemarks = placemarks, let location = placemarks.first?.location else { return }
             let location2D: CLLocationCoordinate2D  = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             self.createPin(location2D)
-            self.map.reloadInputViews()
+            self.mapView.reloadInputViews()
         }
-        
     }
     
     func createPin(_ coordinate: CLLocationCoordinate2D){
         let pin = MKPointAnnotation()
         pin.coordinate = coordinate
         pin.title = "Por onde você esteve"
-        map.addAnnotation(pin)
+        mapView.addAnnotation(pin)
     }
 }
