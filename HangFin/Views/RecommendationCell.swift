@@ -18,11 +18,12 @@ class RecommendationCell: UICollectionViewCell, ICell {
     @IBOutlet weak var dateRecommendation: UILabel!
     @IBOutlet weak var spentRecommendation: UILabel!
     @IBOutlet weak var detailsRecommendation: UILabel!
-    
+    @IBOutlet weak var kmDrivenRecommendation: UILabel!
     
     func draw(_ hangout: Hangout) {
         dateRecommendation.text = hangout.date
         spentRecommendation.text = "R$ \(hangout.spent)"
         detailsRecommendation.text = hangout.isDetailsOpen ? "Voltar" : "Ver detalhes"
+        kmDrivenRecommendation.text = String(format: "%.1f km", hangout.km)
     }
 }
