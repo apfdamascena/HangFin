@@ -55,11 +55,11 @@ class AddViewManager{
     }
     
     
-    func addReferenceToViewManager(references: [UITextField]){
-        fromAdress = references[AddViewManagerConstants.ADRESS]
-        toDestiny = references[AddViewManagerConstants.DESTINY]
-        foodSpent = references[AddViewManagerConstants.FOOD_SPENT]
-        gasSpent = references[AddViewManagerConstants.GAS_SPENT]
+    func addReferenceToViewManager(references fields: UITextField...){
+        fromAdress = fields[AddViewManagerConstants.ADRESS]
+        toDestiny = fields[AddViewManagerConstants.DESTINY]
+        foodSpent = fields[AddViewManagerConstants.FOOD_SPENT]
+        gasSpent = fields[AddViewManagerConstants.GAS_SPENT]
     }
     
     func createHangout() -> Hangout?  {

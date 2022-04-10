@@ -25,18 +25,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var foodSpent: UITextField!
     @IBOutlet weak var gasSpent: UITextField!
     
+    @IBOutlet weak var lastHangoutsView: UIView!
+    @IBOutlet weak var hangoutDetailsView: UIView!
+    
+    @IBOutlet weak var totalSpent: UILabel!
+    
+    @IBOutlet weak var totalHangout: UILabel!
+    @IBOutlet weak var foodHangout: UILabel!
+    @IBOutlet weak var gasHangout: UILabel!
+    @IBOutlet weak var fromAdressHangout: UILabel!
+    @IBOutlet weak var kmHangout: UILabel!
+    @IBOutlet weak var destinyHangout: UILabel!
+    @IBOutlet weak var dateHangout: UILabel!
+    
     var collectionsView: [UICollectionView] = []
 
     var addViewManager: AddViewManager = AddViewManager(observe: UIView())
     var mapViewManager: MapViewManager = MapViewManager(observe: MKMapView())
+    var spentManager: SpentViewManager = SpentViewManager(observe: UILabel())
+    var hangoutDetailsManager: HangoutDetailsViewManager = HangoutDetailsViewManager()
     let hangoutCollectionViewManager: HangoutCollectionViewManager = HangoutCollectionViewManager()
-    let cellDrawer: CellDrawer = CellDrawer()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.registerNibAtCollectionsView()
+        
         NavbarDrawer().draw(view: navbar)
         self.addViewManager = AddViewManager(observe: addView)
         self.mapViewManager = MapViewManager(observe: map)
+        self.spentManager = SpentViewManager(observe: totalSpent)
+        self.hangoutDetailsManager = HangoutDetailsViewManager(observe: lastHangoutsView, hangoutDetailsView)
         
         self.hangoutCollectionViewManager.add(view: lastHangouts)
         self.hangoutCollectionViewManager.add(view: hangoutRecommendation)
@@ -45,10 +63,27 @@ class ViewController: UIViewController {
         self.mapViewManager.setup(context: self)
         
         self.mapViewManager.createAnnotations()
-        self.addViewManager.addReferenceToViewManager(references: [
-            fromAdress, toDestiny, foodSpent, gasSpent])
+        self.spentManager.expenseAccount(of: hangoutCollectionViewManager.hangoutsDataSource)
+        self.addViewManager.addReferenceToViewManager(references: fromAdress, toDestiny, foodSpent, gasSpent)
+        self.hangoutDetailsManager.addReferenceToViewManager(references: dateHangout, totalHangout, foodHangout,
+                                                             gasHangout, fromAdressHangout, destinyHangout, kmHangout)
     }
+    
+    func registerNibAtCollectionsView(){
+        hangoutRecommendation.register(
+            UINib(nibName: RecommendationCollectionViewCell.nib, bundle: nil),
+            forCellWithReuseIdentifier: RecommendationCollectionViewCell.identifier)
         
+        lastHangouts.register(
+            UINib(nibName: HangoutCollectionViewCell.nib, bundle: nil),
+            forCellWithReuseIdentifier: HangoutCollectionViewCell.identifier)
+    }
+    
+    @IBAction func handleTapComeBackHangoutDetailsCard(_ sender: UIButton) {
+        lastHangouts.isHidden = false
+        self.hangoutDetailsManager.changeViewAfterClose()
+    }
+    
     @IBAction func handleTapAddHangoutButton(_ sender: UIButton){
         let hangout: Hangout? = self.addViewManager.createHangout()
         guard let newHangout = hangout else { return }
@@ -60,6 +95,7 @@ class ViewController: UIViewController {
             self.hangoutCollectionViewManager.hangoutsDataSource.append(newHangout)
             self.addViewManager.closeAddView()
             self.hangoutCollectionViewManager.reloadCollectionDataSource()
+            self.spentManager.expenseAccount(of: self.hangoutCollectionViewManager.hangoutsDataSource)
         })
     }
     
@@ -67,8 +103,6 @@ class ViewController: UIViewController {
         self.addViewManager.changeViewAfterAction()
     }
 }
-
-
 
 extension ViewController: MKMapViewDelegate {
 
@@ -99,9 +133,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = collectionView == lastHangouts ? HangoutCell.identifier : RecommendationCell.identifier
+        let identifier = collectionView == lastHangouts ? HangoutCollectionViewCell.identifier : RecommendationCollectionViewCell.identifier
         let dataSource = collectionView == lastHangouts ?
-            hangoutCollectionViewManager.hangoutsDataSource: hangoutCollectionViewManager.recommendationDataSource
+            hangoutCollectionViewManager.hangoutsDataSource : hangoutCollectionViewManager.recommendationDataSource
         
         let cell: ICell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ICell
         let hangout = dataSource[indexPath.row]
@@ -109,9 +143,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
+        lastHangouts.isHidden = true
+        let index = indexPath.row
+        let hangout: Hangout = hangoutCollectionViewManager.hangoutsDataSource[index]
+        self.hangoutDetailsManager.draw(hangout)
     }
+    
 }
 
 

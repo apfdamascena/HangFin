@@ -13,18 +13,22 @@
 		0D1E3ECD27EE3B0B00641570 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1E3ECB27EE3B0B00641570 /* Main.storyboard */; };
 		0D1E3ECF27EE3B0C00641570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D1E3ECE27EE3B0C00641570 /* Assets.xcassets */; };
 		0D1E3ED227EE3B0C00641570 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D1E3ED027EE3B0C00641570 /* LaunchScreen.storyboard */; };
-		0D1E3EDE27EEB7C500641570 /* HangoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1E3EDD27EEB7C500641570 /* HangoutCell.swift */; };
 		0D26200927FF29C40071371B /* RouteDistanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26200827FF29C40071371B /* RouteDistanceError.swift */; };
 		0D26200B27FF30D70071371B /* CalculateDistanceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26200A27FF30D70071371B /* CalculateDistanceError.swift */; };
 		0D26200D27FF32700071371B /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26200C27FF32700071371B /* Map.swift */; };
+		0D26201B2801F2D50071371B /* HangoutCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D2620192801F2D50071371B /* HangoutCollectionViewCell.swift */; };
+		0D26201C2801F2D50071371B /* HangoutCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D26201A2801F2D50071371B /* HangoutCollectionViewCell.xib */; };
+		0D262023280203E80071371B /* RecommendationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D262021280203E80071371B /* RecommendationCollectionViewCell.swift */; };
+		0D262024280203E80071371B /* RecommendationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0D262022280203E80071371B /* RecommendationCollectionViewCell.xib */; };
+		0D26202A28036C710071371B /* SpentViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26202928036C710071371B /* SpentViewManager.swift */; };
+		0D26202C2803746E0071371B /* HangoutDetailsViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26202B2803746E0071371B /* HangoutDetailsViewManager.swift */; };
+		0D26202E28039B110071371B /* MarginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26202D28039B110071371B /* MarginLabel.swift */; };
 		0D92BBBB27EF792900970090 /* ICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBBA27EF792800970090 /* ICell.swift */; };
 		0D92BBBE27EF7BC200970090 /* Hangout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBBD27EF7BC200970090 /* Hangout.swift */; };
-		0D92BBC327EF8BC900970090 /* RecommendationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBC227EF8BC900970090 /* RecommendationCell.swift */; };
 		0D92BBCF27F3792000970090 /* NavbarDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBCE27F3792000970090 /* NavbarDrawer.swift */; };
 		0D92BBF127F3B10D00970090 /* ViewDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBF027F3B10D00970090 /* ViewDesignable.swift */; };
 		0D92BBF327F3C9ED00970090 /* AddViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBF227F3C9ED00970090 /* AddViewManager.swift */; };
 		0DA27C8127F558FC000FE4A0 /* HangoutCollectionViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA27C8027F558FC000FE4A0 /* HangoutCollectionViewManager.swift */; };
-		0DA952A527F60E4C008132AC /* CellDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA952A427F60E4C008132AC /* CellDrawer.swift */; };
 		0DA952A727F611B1008132AC /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA952A627F611B1008132AC /* Calculate.swift */; };
 		0DA952A927F63BFC008132AC /* MapViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA952A827F63BFC008132AC /* MapViewManager.swift */; };
 		0DA952B027F6BBBE008132AC /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA952AF27F6BBBE008132AC /* MapConstants.swift */; };
@@ -40,18 +44,22 @@
 		0D1E3ECE27EE3B0C00641570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D1E3ED127EE3B0C00641570 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D1E3ED327EE3B0C00641570 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0D1E3EDD27EEB7C500641570 /* HangoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangoutCell.swift; sourceTree = "<group>"; };
 		0D26200827FF29C40071371B /* RouteDistanceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteDistanceError.swift; sourceTree = "<group>"; };
 		0D26200A27FF30D70071371B /* CalculateDistanceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateDistanceError.swift; sourceTree = "<group>"; };
 		0D26200C27FF32700071371B /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		0D2620192801F2D50071371B /* HangoutCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangoutCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D26201A2801F2D50071371B /* HangoutCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HangoutCollectionViewCell.xib; sourceTree = "<group>"; };
+		0D262021280203E80071371B /* RecommendationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCollectionViewCell.swift; sourceTree = "<group>"; };
+		0D262022280203E80071371B /* RecommendationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecommendationCollectionViewCell.xib; sourceTree = "<group>"; };
+		0D26202928036C710071371B /* SpentViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpentViewManager.swift; sourceTree = "<group>"; };
+		0D26202B2803746E0071371B /* HangoutDetailsViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangoutDetailsViewManager.swift; sourceTree = "<group>"; };
+		0D26202D28039B110071371B /* MarginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginLabel.swift; sourceTree = "<group>"; };
 		0D92BBBA27EF792800970090 /* ICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICell.swift; sourceTree = "<group>"; };
 		0D92BBBD27EF7BC200970090 /* Hangout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangout.swift; sourceTree = "<group>"; };
-		0D92BBC227EF8BC900970090 /* RecommendationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationCell.swift; sourceTree = "<group>"; };
 		0D92BBCE27F3792000970090 /* NavbarDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarDrawer.swift; sourceTree = "<group>"; };
 		0D92BBF027F3B10D00970090 /* ViewDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDesignable.swift; sourceTree = "<group>"; };
 		0D92BBF227F3C9ED00970090 /* AddViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewManager.swift; sourceTree = "<group>"; };
 		0DA27C8027F558FC000FE4A0 /* HangoutCollectionViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangoutCollectionViewManager.swift; sourceTree = "<group>"; };
-		0DA952A427F60E4C008132AC /* CellDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDrawer.swift; sourceTree = "<group>"; };
 		0DA952A627F611B1008132AC /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		0DA952A827F63BFC008132AC /* MapViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewManager.swift; sourceTree = "<group>"; };
 		0DA952AF27F6BBBE008132AC /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
@@ -144,10 +152,12 @@
 		0D92BBBC27EF7B9A00970090 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0D1E3EDD27EEB7C500641570 /* HangoutCell.swift */,
-				0D92BBC227EF8BC900970090 /* RecommendationCell.swift */,
+				0D2620192801F2D50071371B /* HangoutCollectionViewCell.swift */,
 				0D92BBCE27F3792000970090 /* NavbarDrawer.swift */,
-				0DA952A427F60E4C008132AC /* CellDrawer.swift */,
+				0D262021280203E80071371B /* RecommendationCollectionViewCell.swift */,
+				0D26201A2801F2D50071371B /* HangoutCollectionViewCell.xib */,
+				0D262022280203E80071371B /* RecommendationCollectionViewCell.xib */,
+				0D26202D28039B110071371B /* MarginLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -164,9 +174,11 @@
 		0DA952B127F75EC5008132AC /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				0D26202928036C710071371B /* SpentViewManager.swift */,
 				0D92BBF227F3C9ED00970090 /* AddViewManager.swift */,
 				0DA27C8027F558FC000FE4A0 /* HangoutCollectionViewManager.swift */,
 				0DA952A827F63BFC008132AC /* MapViewManager.swift */,
+				0D26202B2803746E0071371B /* HangoutDetailsViewManager.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -231,7 +243,9 @@
 			files = (
 				0D1E3ED227EE3B0C00641570 /* LaunchScreen.storyboard in Resources */,
 				0D1E3ECF27EE3B0C00641570 /* Assets.xcassets in Resources */,
+				0D262024280203E80071371B /* RecommendationCollectionViewCell.xib in Resources */,
 				0D1E3ECD27EE3B0B00641570 /* Main.storyboard in Resources */,
+				0D26201C2801F2D50071371B /* HangoutCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,23 +256,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D92BBC327EF8BC900970090 /* RecommendationCell.swift in Sources */,
+				0D262023280203E80071371B /* RecommendationCollectionViewCell.swift in Sources */,
 				0D26200927FF29C40071371B /* RouteDistanceError.swift in Sources */,
 				0D92BBF127F3B10D00970090 /* ViewDesignable.swift in Sources */,
 				0D92BBBB27EF792900970090 /* ICell.swift in Sources */,
 				0D1E3ECA27EE3B0B00641570 /* ViewController.swift in Sources */,
 				0DA952B327F76659008132AC /* AddViewManagerConstants.swift in Sources */,
+				0D26202A28036C710071371B /* SpentViewManager.swift in Sources */,
 				0D92BBCF27F3792000970090 /* NavbarDrawer.swift in Sources */,
 				0DA952A927F63BFC008132AC /* MapViewManager.swift in Sources */,
 				0D26200B27FF30D70071371B /* CalculateDistanceError.swift in Sources */,
 				0D26200D27FF32700071371B /* Map.swift in Sources */,
+				0D26201B2801F2D50071371B /* HangoutCollectionViewCell.swift in Sources */,
 				0DA27C8127F558FC000FE4A0 /* HangoutCollectionViewManager.swift in Sources */,
 				0D1E3EC627EE3B0B00641570 /* AppDelegate.swift in Sources */,
 				0DA952B027F6BBBE008132AC /* MapConstants.swift in Sources */,
-				0DA952A527F60E4C008132AC /* CellDrawer.swift in Sources */,
 				0DA952A727F611B1008132AC /* Calculate.swift in Sources */,
-				0D1E3EDE27EEB7C500641570 /* HangoutCell.swift in Sources */,
+				0D26202C2803746E0071371B /* HangoutDetailsViewManager.swift in Sources */,
 				0D92BBF327F3C9ED00970090 /* AddViewManager.swift in Sources */,
+				0D26202E28039B110071371B /* MarginLabel.swift in Sources */,
 				0D92BBBE27EF7BC200970090 /* Hangout.swift in Sources */,
 				0D1E3EC827EE3B0B00641570 /* SceneDelegate.swift in Sources */,
 			);
