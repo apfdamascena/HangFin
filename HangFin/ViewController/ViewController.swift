@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var hangoutDetailsView: UIView!
     
     @IBOutlet weak var totalSpent: UILabel!
-    
     @IBOutlet weak var totalHangout: UILabel!
     @IBOutlet weak var foodHangout: UILabel!
     @IBOutlet weak var gasHangout: UILabel!
@@ -38,11 +37,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var destinyHangout: UILabel!
     @IBOutlet weak var dateHangout: UILabel!
     
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     var collectionsView: [UICollectionView] = []
 
-    var addViewManager: AddViewManager = AddViewManager(observe: UIView())
-    var mapViewManager: MapViewManager = MapViewManager(observe: MKMapView())
-    var spentManager: SpentViewManager = SpentViewManager(observe: UILabel())
+    var addViewManager: AddViewManager = AddViewManager()
+    var mapViewManager: MapViewManager = MapViewManager()
+    var spentManager: SpentViewManager = SpentViewManager()
     var hangoutDetailsManager: HangoutDetailsViewManager = HangoutDetailsViewManager()
     let hangoutCollectionViewManager: HangoutCollectionViewManager = HangoutCollectionViewManager()
     
@@ -64,9 +66,15 @@ class ViewController: UIViewController {
         
         self.mapViewManager.createAnnotations()
         self.spentManager.expenseAccount(of: hangoutCollectionViewManager.hangoutsDataSource)
-        self.addViewManager.addReferenceToViewManager(references: fromAdress, toDestiny, foodSpent, gasSpent)
-        self.hangoutDetailsManager.addReferenceToViewManager(references: dateHangout, totalHangout, foodHangout,
-                                                             gasHangout, fromAdressHangout, destinyHangout, kmHangout)
+        
+        self.addViewManager
+            .addReferenceToViewManager(references: fromAdress,
+                                       toDestiny, foodSpent, gasSpent,
+                                       andAdd: datePicker)
+        self.hangoutDetailsManager
+            .addReferenceToViewManager(references: dateHangout, totalHangout, foodHangout,
+                                                   gasHangout, fromAdressHangout, destinyHangout,
+                                                   kmHangout)
     }
     
     func registerNibAtCollectionsView(){
@@ -81,21 +89,27 @@ class ViewController: UIViewController {
     
     @IBAction func handleTapComeBackHangoutDetailsCard(_ sender: UIButton) {
         lastHangouts.isHidden = false
-        self.hangoutDetailsManager.changeViewAfterClose()
+        self.hangoutDetailsManager.closeHangoutDetails()
     }
     
     @IBAction func handleTapAddHangoutButton(_ sender: UIButton){
+        self.loading.startAnimating()
         let hangout: Hangout? = self.addViewManager.createHangout()
+        self.addViewManager.clearTextfields()
         guard let newHangout = hangout else { return }
         self.mapViewManager.map.calculateDistance(between: newHangout.fromAdress,
                                                   and: newHangout.fromDestiny,
                                                   distanceCompletionHandler: { (distance, error) in
             guard let distance = distance else { return }
+            
             newHangout.km = distance
             self.hangoutCollectionViewManager.hangoutsDataSource.append(newHangout)
-            self.addViewManager.closeAddView()
             self.hangoutCollectionViewManager.reloadCollectionDataSource()
+            
+            self.mapViewManager.addHangoutToMap(hangout: newHangout)
+            self.addViewManager.closeAddView()
             self.spentManager.expenseAccount(of: self.hangoutCollectionViewManager.hangoutsDataSource)
+            self.loading.stopAnimating()
         })
     }
     
@@ -133,7 +147,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = collectionView == lastHangouts ? HangoutCollectionViewCell.identifier : RecommendationCollectionViewCell.identifier
+        let identifier = collectionView == lastHangouts ?
+            HangoutCollectionViewCell.identifier : RecommendationCollectionViewCell.identifier
         let dataSource = collectionView == lastHangouts ?
             hangoutCollectionViewManager.hangoutsDataSource : hangoutCollectionViewManager.recommendationDataSource
         

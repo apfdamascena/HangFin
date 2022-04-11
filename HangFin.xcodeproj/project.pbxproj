@@ -23,6 +23,7 @@
 		0D26202A28036C710071371B /* SpentViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26202928036C710071371B /* SpentViewManager.swift */; };
 		0D26202C2803746E0071371B /* HangoutDetailsViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26202B2803746E0071371B /* HangoutDetailsViewManager.swift */; };
 		0D26202E28039B110071371B /* MarginLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26202D28039B110071371B /* MarginLabel.swift */; };
+		0D2620302803A83D0071371B /* HangoutDetailsDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D26202F2803A83D0071371B /* HangoutDetailsDrawer.swift */; };
 		0D92BBBB27EF792900970090 /* ICell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBBA27EF792800970090 /* ICell.swift */; };
 		0D92BBBE27EF7BC200970090 /* Hangout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBBD27EF7BC200970090 /* Hangout.swift */; };
 		0D92BBCF27F3792000970090 /* NavbarDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D92BBCE27F3792000970090 /* NavbarDrawer.swift */; };
@@ -54,6 +55,7 @@
 		0D26202928036C710071371B /* SpentViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpentViewManager.swift; sourceTree = "<group>"; };
 		0D26202B2803746E0071371B /* HangoutDetailsViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangoutDetailsViewManager.swift; sourceTree = "<group>"; };
 		0D26202D28039B110071371B /* MarginLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarginLabel.swift; sourceTree = "<group>"; };
+		0D26202F2803A83D0071371B /* HangoutDetailsDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangoutDetailsDrawer.swift; sourceTree = "<group>"; };
 		0D92BBBA27EF792800970090 /* ICell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICell.swift; sourceTree = "<group>"; };
 		0D92BBBD27EF7BC200970090 /* Hangout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hangout.swift; sourceTree = "<group>"; };
 		0D92BBCE27F3792000970090 /* NavbarDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavbarDrawer.swift; sourceTree = "<group>"; };
@@ -153,11 +155,12 @@
 			isa = PBXGroup;
 			children = (
 				0D2620192801F2D50071371B /* HangoutCollectionViewCell.swift */,
+				0D26202F2803A83D0071371B /* HangoutDetailsDrawer.swift */,
+				0D26202D28039B110071371B /* MarginLabel.swift */,
 				0D92BBCE27F3792000970090 /* NavbarDrawer.swift */,
 				0D262021280203E80071371B /* RecommendationCollectionViewCell.swift */,
 				0D26201A2801F2D50071371B /* HangoutCollectionViewCell.xib */,
 				0D262022280203E80071371B /* RecommendationCollectionViewCell.xib */,
-				0D26202D28039B110071371B /* MarginLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				0D92BBF327F3C9ED00970090 /* AddViewManager.swift in Sources */,
 				0D26202E28039B110071371B /* MarginLabel.swift in Sources */,
 				0D92BBBE27EF7BC200970090 /* Hangout.swift in Sources */,
+				0D2620302803A83D0071371B /* HangoutDetailsDrawer.swift in Sources */,
 				0D1E3EC827EE3B0B00641570 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

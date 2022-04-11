@@ -22,6 +22,10 @@ class MapViewManager {
         self.mapView = map
     }
     
+    init(){
+        self.mapView = MKMapView()
+    }
+    
     func setup(context: ViewController){
         mapView.delegate = context
         let coordinateZoom = MKCoordinateSpan(latitudeDelta: MapConstants.ZOOM, longitudeDelta: MapConstants.ZOOM)
@@ -44,7 +48,7 @@ class MapViewManager {
     
     func addHangoutToMap(hangout: Hangout){
         
-        let adress: String = hangout.fromAdress
+        let adress: String = hangout.fromDestiny
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(adress) { (placemarks, error) in
             

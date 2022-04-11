@@ -436,14 +436,14 @@
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alimentação" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3C2-fO-C3k">
                                         <rect key="frame" x="32" y="437" width="148" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gasolina" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="19q-Ip-D2y">
                                         <rect key="frame" x="194" y="437" width="148" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" textContentType="location"/>
                                     </textField>
@@ -468,6 +468,10 @@
                                             <action selector="handleTapAddHangoutButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="25V-iI-yh2"/>
                                         </connections>
                                     </button>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Xb7-QW-FND">
+                                        <rect key="frame" x="163" y="283" width="40" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -496,6 +500,7 @@
                     <connections>
                         <outlet property="addView" destination="qWU-91-1Lh" id="4Lu-Ep-skc"/>
                         <outlet property="dateHangout" destination="rwe-dB-fb2" id="rhp-aO-Bw4"/>
+                        <outlet property="datePicker" destination="hxZ-EJ-3jT" id="OeY-Pt-MBF"/>
                         <outlet property="destinyHangout" destination="0sn-ei-nFr" id="O1t-RC-6Qa"/>
                         <outlet property="foodHangout" destination="SBZ-RB-WMr" id="XbN-FE-dne"/>
                         <outlet property="foodSpent" destination="3C2-fO-C3k" id="XEL-tR-trw"/>
@@ -508,6 +513,7 @@
                         <outlet property="kmHangout" destination="YtV-Oa-BRo" id="4yz-xv-OYp"/>
                         <outlet property="lastHangouts" destination="oU2-Ra-fuf" id="nLI-Sy-yp1"/>
                         <outlet property="lastHangoutsView" destination="W70-As-lLb" id="GC5-CX-T9v"/>
+                        <outlet property="loading" destination="Xb7-QW-FND" id="QVB-rF-Idq"/>
                         <outlet property="map" destination="Vpr-DL-Mp3" id="fF6-Vf-rXU"/>
                         <outlet property="navbar" destination="xFp-5e-7pe" id="Tv8-zD-wrf"/>
                         <outlet property="toDestiny" destination="cgS-l2-npK" id="Fjr-Tb-SjL"/>

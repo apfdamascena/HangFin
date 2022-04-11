@@ -22,6 +22,8 @@ class HangoutDetailsViewManager {
     var  destinyHangout: UILabel = UILabel()
     var  dateHangout: UILabel = UILabel()
     
+    let hangoutDetailsDrawer: HangoutDetailsDrawer = HangoutDetailsDrawer()
+    
     init(observe references: UIView...){
         self.lastHangoutsView = references[0]
         self.hangoutDetailsView = references[1]
@@ -43,8 +45,15 @@ class HangoutDetailsViewManager {
     }
     
     func draw(_ hangout: Hangout){
-        changeViewAfterOpen()
-        giveCornerRadiusToLabels()
+        self.hangoutDetailsDrawer
+            .changeViewsAfterUserInteraction(views: lastHangoutsView,
+                                                    hangoutDetailsView,
+                                                    isOpen: true)
+        
+        self.hangoutDetailsDrawer
+            .giveCornerRadiusToLabels(inside: fromAdressHangout,
+                                              kmHangout,
+                                              destinyHangout)
         
         totalHangout.text = "R$ \(hangout.spent)"
         foodHangout.text = "R$ \(hangout.food)"
@@ -54,27 +63,11 @@ class HangoutDetailsViewManager {
         dateHangout.text = hangout.date
         kmHangout.text = String(format: "%.1f", hangout.km)
     }
-
-    private func giveCornerRadiusToLabels(){
-        [fromAdressHangout, kmHangout, destinyHangout].forEach { label in
-            label.layer.cornerRadius = 8
-            label.layer.masksToBounds = true
-        }
-    }
     
-    func changeViewAfterClose() {
-        guard let constraintHeight = self.lastHangoutsView.constraints.first (
-            where: { $0.identifier == "lastHangoutViewHeight" })
-        else { return }
-        constraintHeight.constant = 266
-        hangoutDetailsView.isHidden = true
-    }
-    
-    private func changeViewAfterOpen(){
-        guard let constraintHeight = self.lastHangoutsView.constraints.first (
-            where: { $0.identifier == "lastHangoutViewHeight" })
-        else { return }
-        constraintHeight.constant = 470
-        hangoutDetailsView.isHidden = false
+    func closeHangoutDetails(){
+        self.hangoutDetailsDrawer
+            .changeViewsAfterUserInteraction(views: lastHangoutsView,
+                                                    hangoutDetailsView,
+                                                    isOpen: false)
     }
 }

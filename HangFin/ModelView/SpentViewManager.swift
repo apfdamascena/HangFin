@@ -16,6 +16,10 @@ class SpentViewManager {
         self.spent = spentTextField
     }
     
+    init(){
+        self.spent = UILabel()
+    }
+    
     func expenseAccount(of hangouts: [Hangout]) {
         var sum: Double = 0.0
         hangouts.forEach{ hangout in

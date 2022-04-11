@@ -13,13 +13,18 @@ class AddViewManager{
     
     let view: UIView
     
-    var fromAdress: UITextField!
-    var toDestiny: UITextField!
-    var foodSpent: UITextField!
-    var gasSpent: UITextField!
+    var fromAdress: UITextField = UITextField()
+    var toDestiny: UITextField = UITextField()
+    var foodSpent: UITextField = UITextField()
+    var gasSpent: UITextField = UITextField()
+    var datePicker: UIDatePicker = UIDatePicker()
     
     init(observe view: UIView){
         self.view = view
+    }
+    
+    init(){
+        self.view = UIView()
     }
     
     func changeViewAfterAction(){
@@ -54,12 +59,12 @@ class AddViewManager{
         })
     }
     
-    
-    func addReferenceToViewManager(references fields: UITextField...){
+    func addReferenceToViewManager(references fields: UITextField..., andAdd date: UIDatePicker){
         fromAdress = fields[AddViewManagerConstants.ADRESS]
         toDestiny = fields[AddViewManagerConstants.DESTINY]
         foodSpent = fields[AddViewManagerConstants.FOOD_SPENT]
         gasSpent = fields[AddViewManagerConstants.GAS_SPENT]
+        datePicker = date
     }
     
     func createHangout() -> Hangout?  {
@@ -71,12 +76,30 @@ class AddViewManager{
         let parseFoodToNumber = Double(food) ?? 0
         let parseGasToNumber = Double(gas) ?? 0
         let sumGasAndFood = parseFoodToNumber + parseGasToNumber
-        return Hangout(date: "13/13/2013",
+        
+        let date: String = transformDateToString()
+            
+        return Hangout(date: date,
                        fromAdress: adress,
                        fromDestiny: destiny,
                        spent: sumGasAndFood,
                        food: parseFoodToNumber,
                        gas: parseGasToNumber)
+    }
+    
+    private func transformDateToString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
         
+        let parseDateString = dateFormatter.string(from: self.datePicker.date)
+        return parseDateString
+    }
+    
+    func clearTextfields(){
+        fromAdress.text = ""
+        toDestiny.text = ""
+        foodSpent.text = ""
+        gasSpent.text = ""
+        datePicker.setDate(Date.now, animated: false)
     }
 }

@@ -66,18 +66,4 @@ class Map {
             distanceRouteCompletionHandler(distanceInKM, nil)
         })
     }
-    
 }
-
-
-// [ cards ] -> time = 2
-//              time = 3
-
-// check ou unchecked
-
-// calcular
-
-// let sum = 0
-// passar por todos os cards e ver que quem ta check e se estiver checked -> sum += card.time
-
-// valor de todos que foram checked
