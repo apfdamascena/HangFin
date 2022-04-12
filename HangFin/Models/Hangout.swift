@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class Hangout {
     
     public let date: String
