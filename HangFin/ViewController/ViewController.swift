@@ -28,7 +28,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var lastHangoutsView: UIView!
     @IBOutlet weak var hangoutDetailsView: UIView!
     
+    @IBOutlet weak var recommendationHangoutView: UIView!
+    @IBOutlet weak var recommendationHangoutDetails: UIView!
+    
     @IBOutlet weak var totalSpent: UILabel!
+    
     @IBOutlet weak var totalHangout: UILabel!
     @IBOutlet weak var foodHangout: UILabel!
     @IBOutlet weak var gasHangout: UILabel!
@@ -37,44 +41,35 @@ class ViewController: UIViewController {
     @IBOutlet weak var destinyHangout: UILabel!
     @IBOutlet weak var dateHangout: UILabel!
     
+    @IBOutlet weak var dateRecommendation: UILabel!
+    @IBOutlet weak var totalRecommendation: UILabel!
+    @IBOutlet weak var gasRecommendation: UILabel!
+    @IBOutlet weak var foodRecommendation: UILabel!
+    @IBOutlet weak var fromAdressRecommendation: MarginLabel!
+    @IBOutlet weak var destinyRecommendation: MarginLabel!
+    @IBOutlet weak var kmRecommendation: MarginLabel!
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
-    var collectionsView: [UICollectionView] = []
-
     var addViewManager: AddViewManager = AddViewManager()
     var mapViewManager: MapViewManager = MapViewManager()
     var spentManager: SpentViewManager = SpentViewManager()
     var hangoutDetailsManager: HangoutDetailsViewManager = HangoutDetailsViewManager()
+    var recommendationDetailsManager: HangoutDetailsViewManager = HangoutDetailsViewManager()
     let hangoutCollectionViewManager: HangoutCollectionViewManager = HangoutCollectionViewManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerNibAtCollectionsView()
-        
         NavbarDrawer().draw(view: navbar)
-        self.addViewManager = AddViewManager(observe: addView)
-        self.mapViewManager = MapViewManager(observe: map)
-        self.spentManager = SpentViewManager(observe: totalSpent)
-        self.hangoutDetailsManager = HangoutDetailsViewManager(observe: lastHangoutsView, hangoutDetailsView)
         
-        self.hangoutCollectionViewManager.add(view: lastHangouts)
-        self.hangoutCollectionViewManager.add(view: hangoutRecommendation)
-        
-        self.hangoutCollectionViewManager.setup(context: self)
-        self.mapViewManager.setup(context: self)
-        
+        self.createManagers()
+        self.setupManagers()
+        self.addReferencesToManagers()
+
         self.mapViewManager.createAnnotations()
         self.spentManager.expenseAccount(of: hangoutCollectionViewManager.hangoutsDataSource)
-        
-        self.addViewManager
-            .addReferenceToViewManager(references: fromAdress,
-                                       toDestiny, foodSpent, gasSpent,
-                                       andAdd: datePicker)
-        self.hangoutDetailsManager
-            .addReferenceToViewManager(references: dateHangout, totalHangout, foodHangout,
-                                                   gasHangout, fromAdressHangout, destinyHangout,
-                                                   kmHangout)
     }
     
     func registerNibAtCollectionsView(){
@@ -90,6 +85,11 @@ class ViewController: UIViewController {
     @IBAction func handleTapComeBackHangoutDetailsCard(_ sender: UIButton) {
         lastHangouts.isHidden = false
         self.hangoutDetailsManager.closeHangoutDetails()
+    }
+    
+    @IBAction func handleTapComeBackRecommendationDetailsCard(_ sender: UIButton) {
+        hangoutRecommendation.isHidden = false
+        self.recommendationDetailsManager.closeHangoutDetails()
     }
     
     @IBAction func handleTapAddHangoutButton(_ sender: UIButton){
@@ -116,55 +116,6 @@ class ViewController: UIViewController {
     @IBAction func openAddViewAfterButtonTapped(_ sender: UIButton) {
         self.addViewManager.changeViewAfterAction()
     }
-}
-
-extension ViewController: MKMapViewDelegate {
-
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard !(annotation is MKUserLocation) else { return nil }
-        var annotationView = map.dequeueReusableAnnotationView(withIdentifier: MapConstants.IDENTIFIER)
-        
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation,
-                                              reuseIdentifier: MapConstants.IDENTIFIER)
-        } else {
-            annotationView?.annotation = annotation
-            annotationView?.canShowCallout = true
-        }
-
-        annotationView?.image = UIImage(named: MapConstants.PIN_IMAGE)
-        return annotationView
-    }
-
-}
-
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == lastHangouts ?
-                hangoutCollectionViewManager.hangoutsDataSource.count :
-                hangoutCollectionViewManager.recommendationDataSource.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = collectionView == lastHangouts ?
-            HangoutCollectionViewCell.identifier : RecommendationCollectionViewCell.identifier
-        let dataSource = collectionView == lastHangouts ?
-            hangoutCollectionViewManager.hangoutsDataSource : hangoutCollectionViewManager.recommendationDataSource
-        
-        let cell: ICell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! ICell
-        let hangout = dataSource[indexPath.row]
-        cell.draw(hangout)
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {        
-        lastHangouts.isHidden = true
-        let index = indexPath.row
-        let hangout: Hangout = hangoutCollectionViewManager.hangoutsDataSource[index]
-        self.hangoutDetailsManager.draw(hangout)
-    }
-    
 }
 
 

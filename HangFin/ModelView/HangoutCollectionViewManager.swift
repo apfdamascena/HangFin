@@ -20,7 +20,9 @@ class HangoutCollectionViewManager {
         Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75)
     ]
     
-    var recommendationDataSource: [Hangout] = []
+    var recommendationDataSource: [Hangout] = [
+        Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75)
+    ]
         
     func add(view: UICollectionView) {
         collections.append(view)

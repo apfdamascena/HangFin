@@ -34,6 +34,9 @@
 		0DA952A927F63BFC008132AC /* MapViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA952A827F63BFC008132AC /* MapViewManager.swift */; };
 		0DA952B027F6BBBE008132AC /* MapConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA952AF27F6BBBE008132AC /* MapConstants.swift */; };
 		0DA952B327F76659008132AC /* AddViewManagerConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DA952B227F76659008132AC /* AddViewManagerConstants.swift */; };
+		0DEB28B72804FEFF0030CA08 /* ManagersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB28B62804FEFF0030CA08 /* ManagersExtension.swift */; };
+		0DEB28B92805040D0030CA08 /* MapExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB28B82805040D0030CA08 /* MapExtensions.swift */; };
+		0DEB28BB280504580030CA08 /* CollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB28BA280504580030CA08 /* CollectionViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		0DA952A827F63BFC008132AC /* MapViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewManager.swift; sourceTree = "<group>"; };
 		0DA952AF27F6BBBE008132AC /* MapConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConstants.swift; sourceTree = "<group>"; };
 		0DA952B227F76659008132AC /* AddViewManagerConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewManagerConstants.swift; sourceTree = "<group>"; };
+		0DEB28B62804FEFF0030CA08 /* ManagersExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagersExtension.swift; sourceTree = "<group>"; };
+		0DEB28B82805040D0030CA08 /* MapExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapExtensions.swift; sourceTree = "<group>"; };
+		0DEB28BA280504580030CA08 /* CollectionViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 		0D1E3EC427EE3B0B00641570 /* HangFin */ = {
 			isa = PBXGroup;
 			children = (
+				0DEB28B52804FEE80030CA08 /* Extensions */,
 				0D26200727FF299C0071371B /* Errors */,
 				0DA952B127F75EC5008132AC /* ModelView */,
 				0DA952AE27F6BBA7008132AC /* Constants */,
@@ -186,6 +193,16 @@
 			path = ModelView;
 			sourceTree = "<group>";
 		};
+		0DEB28B52804FEE80030CA08 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				0DEB28B62804FEFF0030CA08 /* ManagersExtension.swift */,
+				0DEB28B82805040D0030CA08 /* MapExtensions.swift */,
+				0DEB28BA280504580030CA08 /* CollectionViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -264,6 +281,7 @@
 				0D92BBF127F3B10D00970090 /* ViewDesignable.swift in Sources */,
 				0D92BBBB27EF792900970090 /* ICell.swift in Sources */,
 				0D1E3ECA27EE3B0B00641570 /* ViewController.swift in Sources */,
+				0DEB28B72804FEFF0030CA08 /* ManagersExtension.swift in Sources */,
 				0DA952B327F76659008132AC /* AddViewManagerConstants.swift in Sources */,
 				0D26202A28036C710071371B /* SpentViewManager.swift in Sources */,
 				0D92BBCF27F3792000970090 /* NavbarDrawer.swift in Sources */,
@@ -276,8 +294,10 @@
 				0DA952B027F6BBBE008132AC /* MapConstants.swift in Sources */,
 				0DA952A727F611B1008132AC /* Calculate.swift in Sources */,
 				0D26202C2803746E0071371B /* HangoutDetailsViewManager.swift in Sources */,
+				0DEB28BB280504580030CA08 /* CollectionViewExtensions.swift in Sources */,
 				0D92BBF327F3C9ED00970090 /* AddViewManager.swift in Sources */,
 				0D26202E28039B110071371B /* MarginLabel.swift in Sources */,
+				0DEB28B92805040D0030CA08 /* MapExtensions.swift in Sources */,
 				0D92BBBE27EF7BC200970090 /* Hangout.swift in Sources */,
 				0D2620302803A83D0071371B /* HangoutDetailsDrawer.swift in Sources */,
 				0D1E3EC827EE3B0B00641570 /* SceneDelegate.swift in Sources */,

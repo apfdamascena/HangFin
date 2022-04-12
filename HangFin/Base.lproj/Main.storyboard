@@ -267,6 +267,115 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q7M-T1-olh">
+                                                        <rect key="frame" x="18" y="36" width="353" height="410"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GreenDetails" translatesAutoresizingMaskIntoConstraints="NO" id="YUN-x1-4aT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="353" height="410"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20/03/2013" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyY-hY-ei8">
+                                                                <rect key="frame" x="16" y="14" width="175" height="24"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Informações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dae-zf-FDX">
+                                                                <rect key="frame" x="16" y="233" width="115" height="24"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$ 6570.70" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nat-DW-acf">
+                                                                <rect key="frame" x="0.0" y="65" width="353" height="41"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$ 230.78" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xrj-ql-rQ4">
+                                                                <rect key="frame" x="0.0" y="161" width="178" height="41"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="R$ 230.78" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44V-ds-2AP">
+                                                                <rect key="frame" x="177" y="161" width="178" height="41"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alimentação" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFr-17-0Ks">
+                                                                <rect key="frame" x="0.0" y="134" width="178" height="17"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.28627450980392155" green="0.28627450980392155" blue="0.28627450980392155" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gasolina" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWG-yE-6Tb">
+                                                                <rect key="frame" x="177" y="134" width="178" height="17"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.55000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCI-4e-1Ls" customClass="MarginLabel" customModule="HangFin" customModuleProvider="target">
+                                                                <rect key="frame" x="47" y="269" width="290" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="left">
+                                                                        <real key="value" value="8"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE6-3O-yzv" customClass="MarginLabel" customModule="HangFin" customModuleProvider="target">
+                                                                <rect key="frame" x="47" y="299" width="290" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="left">
+                                                                        <real key="value" value="8"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3Z-um-SUQ" customClass="MarginLabel" customModule="HangFin" customModuleProvider="target">
+                                                                <rect key="frame" x="47" y="328" width="120" height="21"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.059999999999999998" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="left">
+                                                                        <real key="value" value="8"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eRl-B3-d1r">
+                                                                <rect key="frame" x="283" y="360" width="69" height="35"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" title="Voltar">
+                                                                    <color key="baseForegroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="handleTapComeBackRecommendationDetailsCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yZv-di-eZb"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </view>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="RecommendationsViewCell" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nIq-TB-4ET">
                                                         <rect key="frame" x="15" y="33" width="390" height="190"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -350,7 +459,7 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="266" id="3Oq-aC-RHA"/>
+                                                    <constraint firstAttribute="height" constant="266" identifier="recommendationViewHeight" id="3Oq-aC-RHA"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vyp-XE-0T9">
@@ -501,23 +610,32 @@
                         <outlet property="addView" destination="qWU-91-1Lh" id="4Lu-Ep-skc"/>
                         <outlet property="dateHangout" destination="rwe-dB-fb2" id="rhp-aO-Bw4"/>
                         <outlet property="datePicker" destination="hxZ-EJ-3jT" id="OeY-Pt-MBF"/>
+                        <outlet property="dateRecommendation" destination="lyY-hY-ei8" id="UfB-y7-Yic"/>
                         <outlet property="destinyHangout" destination="0sn-ei-nFr" id="O1t-RC-6Qa"/>
+                        <outlet property="destinyRecommendation" destination="QE6-3O-yzv" id="JEv-eS-MrV"/>
                         <outlet property="foodHangout" destination="SBZ-RB-WMr" id="XbN-FE-dne"/>
+                        <outlet property="foodRecommendation" destination="Xrj-ql-rQ4" id="IEf-4t-6g0"/>
                         <outlet property="foodSpent" destination="3C2-fO-C3k" id="XEL-tR-trw"/>
                         <outlet property="fromAdress" destination="C8P-Ta-SZt" id="lmx-DF-WkX"/>
                         <outlet property="fromAdressHangout" destination="t7M-7S-9qc" id="BQe-sl-qZy"/>
+                        <outlet property="fromAdressRecommendation" destination="FCI-4e-1Ls" id="hgO-Dr-2zm"/>
                         <outlet property="gasHangout" destination="6eC-rV-qCC" id="vzw-GW-ydz"/>
+                        <outlet property="gasRecommendation" destination="44V-ds-2AP" id="II0-ip-KsB"/>
                         <outlet property="gasSpent" destination="19q-Ip-D2y" id="e6b-6l-hCc"/>
                         <outlet property="hangoutDetailsView" destination="gmP-oT-53f" id="4eU-wv-nZs"/>
                         <outlet property="hangoutRecommendation" destination="nIq-TB-4ET" id="WXv-xL-IQV"/>
                         <outlet property="kmHangout" destination="YtV-Oa-BRo" id="4yz-xv-OYp"/>
+                        <outlet property="kmRecommendation" destination="j3Z-um-SUQ" id="sai-Ta-qLn"/>
                         <outlet property="lastHangouts" destination="oU2-Ra-fuf" id="nLI-Sy-yp1"/>
                         <outlet property="lastHangoutsView" destination="W70-As-lLb" id="GC5-CX-T9v"/>
                         <outlet property="loading" destination="Xb7-QW-FND" id="QVB-rF-Idq"/>
                         <outlet property="map" destination="Vpr-DL-Mp3" id="fF6-Vf-rXU"/>
                         <outlet property="navbar" destination="xFp-5e-7pe" id="Tv8-zD-wrf"/>
+                        <outlet property="recommendationHangoutDetails" destination="q7M-T1-olh" id="XUU-Yd-6Hm"/>
+                        <outlet property="recommendationHangoutView" destination="4bY-W8-fcW" id="1d3-Nq-DN5"/>
                         <outlet property="toDestiny" destination="cgS-l2-npK" id="Fjr-Tb-SjL"/>
                         <outlet property="totalHangout" destination="fvL-x1-6Ca" id="RQU-fF-1Zh"/>
+                        <outlet property="totalRecommendation" destination="Nat-DW-acf" id="swu-Bg-jWh"/>
                         <outlet property="totalSpent" destination="GoX-tK-Feo" id="8an-oy-dMw"/>
                     </connections>
                 </viewController>
@@ -527,12 +645,28 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="0sn-ei-nFr">
+            <size key="intrinsicContentSize" width="37.333333333333336" height="18"/>
+        </designable>
+        <designable name="FCI-4e-1Ls">
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+        </designable>
+        <designable name="QE6-3O-yzv">
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+        </designable>
+        <designable name="YtV-Oa-BRo">
+            <size key="intrinsicContentSize" width="37.333333333333336" height="18"/>
+        </designable>
+        <designable name="j3Z-um-SUQ">
+            <size key="intrinsicContentSize" width="41.333333333333336" height="20.333333333333332"/>
+        </designable>
         <designable name="t7M-7S-9qc">
             <size key="intrinsicContentSize" width="37.333333333333336" height="18"/>
         </designable>
     </designables>
     <resources>
         <image name="GreenCard" width="284" height="182"/>
+        <image name="GreenDetails" width="370" height="428"/>
         <image name="HangoutCard" width="284" height="176"/>
         <image name="HangoutCardDetails" width="370" height="428"/>
         <image name="Homebackground" width="390" height="844"/>

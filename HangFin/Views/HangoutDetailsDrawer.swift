@@ -11,7 +11,8 @@ import UIKit
 
 class HangoutDetailsDrawer {
     
-    let constraintsIdentifier: String = "lastHangoutViewHeight"
+    let hangoutConstraintIdentifier: String = "lastHangoutViewHeight"
+    let recommendationConstrintIdentifier: String = "recommendationViewHeight"
     
     
     func giveCornerRadiusToLabels(inside labels: UILabel...){
@@ -26,7 +27,9 @@ class HangoutDetailsDrawer {
         let hangoutDetailsView: UIView = views[1]
         
         guard let constraintHeight = lastHangoutsView.constraints.first (
-            where: { $0.identifier == constraintsIdentifier })
+            where: { $0.identifier == hangoutConstraintIdentifier  ||
+                $0.identifier == recommendationConstrintIdentifier
+            })
         else { return }
         
         constraintHeight.constant = isOpen ? 470 : 266
