@@ -14,15 +14,9 @@ class HangoutCollectionViewManager {
     
     var  hangoutsDataSource : [Hangout] = [
         Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75),
-        Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75),
-        Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75),
-        Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75),
-        Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75)
-    ]
+        Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75)]
     
-    var recommendationDataSource: [Hangout] = [
-        Hangout(date: "23/03/2024", fromAdress: "Rua Rio Capibaribe - Cordeiros", fromDestiny: "Rua Setubal - Boa Viagem", spent: 1250.50, food: 300.0, gas: 250.75)
-    ]
+    var recommendationDataSource: [Hangout] = []
         
     func add(view: UICollectionView) {
         collections.append(view)
@@ -38,7 +32,6 @@ class HangoutCollectionViewManager {
         }
     }
     
-
     func possibleRecommendation(){
         let hangoutAvarage: Double = Calculate.avarage(of: hangoutsDataSource) * 0.5
         var newRecommendation: [Hangout] = []

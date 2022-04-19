@@ -30,11 +30,9 @@ class MapViewManager {
         mapView.delegate = context
         let coordinateZoom = MKCoordinateSpan(latitudeDelta: MapConstants.ZOOM, longitudeDelta: MapConstants.ZOOM)
         mapView.setRegion(MKCoordinateRegion(center: coordinates[0],
-                                         
-                                         span: coordinateZoom),
-                                         animated: false)
+                                             span: coordinateZoom),
+                                             animated: false)
     }
-    
     
     func add(coordinate: CLLocationCoordinate2D){
         coordinates.append(coordinate)
@@ -46,8 +44,14 @@ class MapViewManager {
         }
     }
     
+    private func createPin(_ coordinate: CLLocationCoordinate2D){
+        let pin = MKPointAnnotation()
+        pin.coordinate = coordinate
+        pin.title = "Por onde você esteve"
+        mapView.addAnnotation(pin)
+    }
+
     func addHangoutToMap(hangout: Hangout){
-        
         let adress: String = hangout.fromDestiny
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(adress) { (placemarks, error) in
@@ -59,10 +63,4 @@ class MapViewManager {
         }
     }
     
-    func createPin(_ coordinate: CLLocationCoordinate2D){
-        let pin = MKPointAnnotation()
-        pin.coordinate = coordinate
-        pin.title = "Por onde você esteve"
-        mapView.addAnnotation(pin)
-    }
 }

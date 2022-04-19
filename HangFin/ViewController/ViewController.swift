@@ -70,6 +70,14 @@ class ViewController: UIViewController {
 
         self.mapViewManager.createAnnotations()
         self.spentManager.expenseAccount(of: hangoutCollectionViewManager.hangoutsDataSource)
+        self.hasAnyRecommendationToShow()
+    }
+    
+    func hasAnyRecommendationToShow(){
+        let quantityRecommendation = self.hangoutCollectionViewManager.recommendationDataSource.count
+        let isShowable = quantityRecommendation > 0 ? true : false
+        print(isShowable)
+        self.recommendationHangoutView.isHidden = !isShowable
     }
     
     func registerNibAtCollectionsView(){
@@ -100,7 +108,11 @@ class ViewController: UIViewController {
         self.mapViewManager.map.calculateDistance(between: newHangout.fromAdress,
                                                   and: newHangout.fromDestiny,
                                                   distanceCompletionHandler: { (distance, error) in
-            guard let distance = distance else { return }
+            guard let distance = distance else {
+                self.loading.stopAnimating()
+                self.addViewManager.closeAddView()
+                return
+            }
             
             newHangout.km = distance
             self.hangoutCollectionViewManager.hangoutsDataSource.append(newHangout)
@@ -109,6 +121,7 @@ class ViewController: UIViewController {
             self.mapViewManager.addHangoutToMap(hangout: newHangout)
             self.addViewManager.closeAddView()
             self.spentManager.expenseAccount(of: self.hangoutCollectionViewManager.hangoutsDataSource)
+            self.hasAnyRecommendationToShow()
             self.loading.stopAnimating()
         })
     }
