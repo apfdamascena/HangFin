@@ -12,16 +12,18 @@ import CoreLocation
 class Map {
 
     func calculateDistance(between fromAdress: String, and destiny: String, distanceCompletionHandler: @escaping (Double?, Error?) -> Void){
+        let fromAdressWithState = fromAdress + " Recife - PE"
+        let destinyWithState = destiny + " Recife - PE"
         
         let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(fromAdress){ (placemarks: [CLPlacemark]?, error: Error?) in
+        geocoder.geocodeAddressString(fromAdressWithState){ (placemarks: [CLPlacemark]?, error: Error?) in
             guard let placemarks = placemarks else {
                 distanceCompletionHandler(nil, CalculateDistanceError.placemarksIsEmpty)
                 return
             }
             
             let fromAdressStartPoint = placemarks[0]
-            geocoder.geocodeAddressString(destiny, completionHandler: { (placemarks: [CLPlacemark]?, error: Error? ) in
+            geocoder.geocodeAddressString(destinyWithState, completionHandler: { (placemarks: [CLPlacemark]?, error: Error? ) in
                 guard let placemarks = placemarks else {
                     distanceCompletionHandler(nil, CalculateDistanceError.placemarksIsEmpty)
                     return

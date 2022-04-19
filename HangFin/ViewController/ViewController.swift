@@ -75,9 +75,8 @@ class ViewController: UIViewController {
     
     func hasAnyRecommendationToShow(){
         let quantityRecommendation = self.hangoutCollectionViewManager.recommendationDataSource.count
-        let isShowable = quantityRecommendation > 0 ? true : false
-        print(isShowable)
-        self.recommendationHangoutView.isHidden = !isShowable
+        let isShowable = quantityRecommendation > 0 ? false : true
+        self.recommendationHangoutView.isHidden = isShowable
     }
     
     func registerNibAtCollectionsView(){
@@ -117,7 +116,6 @@ class ViewController: UIViewController {
             newHangout.km = distance
             self.hangoutCollectionViewManager.hangoutsDataSource.append(newHangout)
             self.hangoutCollectionViewManager.reloadCollectionDataSource()
-            
             self.mapViewManager.addHangoutToMap(hangout: newHangout)
             self.addViewManager.closeAddView()
             self.spentManager.expenseAccount(of: self.hangoutCollectionViewManager.hangoutsDataSource)
